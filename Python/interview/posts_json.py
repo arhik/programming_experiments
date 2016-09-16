@@ -4,10 +4,43 @@ import os
 import math
 
 path = 'posts.json' #Path of the posts.json file
+preprocessed_path = 'post_posts.json'
+
+class jsonReader:
+    """Custom JSON Reader
+    ///Over Kill
+    """
+    def __init__(self,path):
+        self._path = path
+        self._file = None
+    
+    def __enter__(self):
+        try:
+            self._file = open(self._path)
+        except IOError as ioerror:
+            print("File Not found")
+        else:
+            return self._file
+        return None
+
+    def __exit__(self, exc_t, exc_val, exc_tb):
+        del self._file
+
+
+def preprocess_json():
+    with jsonReader(path) as f:
+        if f is not None:
+            a = json.load(f, 'utf-8')
+            for i in a:
+                if i.has_key(u'user'): # Preprocessing in case of missing keys like 'username', 'latitude'
+                    continue
+                else:
+                    a.pop(a.index(i))
+            return(a)
+        return([])
 
 def read_posts():
-    with open(path) as f:
-        return(json.load(f, 'utf-8'))
+    return(preprocess_json())
 
 def getFollowersCount(post):
     return post[u'user'][u'followers']
@@ -19,6 +52,8 @@ def geodesic_dist(a):
 
 def run():
     posts = read_posts()
+    if len(posts)==0:
+        return
 
     # Finding the user details with highest number of followers"
     posts.sort(key=lambda x: -getFollowersCount(x))
