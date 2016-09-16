@@ -177,4 +177,3 @@ class NeuralNetwork:
             for i,node in enumerate(self.nodes[layer]):
                 node.delta = deltas[i]
         return(deltas)
-
