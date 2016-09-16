@@ -19,15 +19,21 @@ class IntSet:
         for i in self.set_elems:
             yield i
 
+    def __eq__(self, rhs):
+        if not isinstance(rhs, IntSet):
+            raise TypeError("Cannot compare IntSet with an unknown object")
+        return self.set_elems == rhs.set_elems
+
     def __repr__(self):
         return("IntSet with elements {}".format(set(self.set_elems)))
 
     def issubset(self,b):
-        if isinstance(b, IntSet):
-            for i in b:
-                if i not in self:
-                    return False
-            return True
+        if not isinstance(b, IntSet):
+            raise TypeError("Given input is not of IntSet type:")
+        for i in b:
+            if i not in self:
+                return False
+        return True
 
 
 def is_subset(a, b):
@@ -36,4 +42,5 @@ def is_subset(a, b):
         b = IntSet(b)
     except TypeError as e:
         print(e)
+        raise e
     return(a.issubset(b))
