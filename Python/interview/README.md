@@ -1,6 +1,6 @@
 ## The technical book I read.
 
-The technical book I read recently is on google's 'Site reliability engineering. How google runs its production systems'. As a computer engineer I am always interested in fault tolerance, scalability and reliability of systems. This book walks through the history of google and gives us insight into google's production systems. I am still half way through and its touching every coursework I had in my masters. I wished for such book while I was studying those concepts. Also as aspirant of entrepreneurship this book also gave me an brief outline of what it takes to provide a reliable service. This is also a good resource to learn from google's mistakes. Hence I strongly recommend it.
+The technical book I read recently is on google's 'Site reliability engineering. How google runs its production systems'. As a computer engineer I am always interested in fault tolerance, scalability and reliability of systems. This book walks through the history of google and gives us insight into google's production systems. I am still half way through and its touching every coursework I had in my masters. I wished for such book while I was studying those concepts. Also as aspirant of entrepreneurship this book also gave me a brief outline of what it takes to provide a reliable service. This is also a good resource to learn from google's moves and mistakes. Hence I strongly recommend it.
 
 ## Regarding complexity of *is_subset* function. 
 
