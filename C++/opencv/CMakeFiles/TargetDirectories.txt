@@ -1,0 +1,3 @@
+/home/arhik/tmp/opencv/CMakeFiles/edit_cache.dir
+/home/arhik/tmp/opencv/CMakeFiles/rebuild_cache.dir
+/home/arhik/tmp/opencv/CMakeFiles/firstP.dir

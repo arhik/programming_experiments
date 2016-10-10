@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 2.4)
+project(FirstP)
+find_package( OpenCV REQUIRED)
+add_executable(firstP firstP.cpp)
+target_link_libraries(firstP ${OpenCV_LIBS})
